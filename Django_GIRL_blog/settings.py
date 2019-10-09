@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+CRISPY_TEMPLATE_PACK = "bootstrap4" # impostazione necessaria per django-crispy-forms
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +57,9 @@ ROOT_URLCONF = 'Django_GIRL_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR,'static/CSS'),
+                  os.path.join(BASE_DIR,'static/HTML') ,
+                  os.path.join(BASE_DIR,'static/IMG')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'it'
 
 TIME_ZONE = 'UTC'
 
